@@ -1,5 +1,6 @@
 #include "PID.h"
 #include <iostream>
+#include "math.h"
 
 using namespace std;
 
@@ -41,8 +42,8 @@ double PID::TotalError() {
 	double steer_I = -PID::Ki*PID::i_error;
 	double steer_D = -PID::Kd*PID::d_error;
 	
-	double steer_angle = (steer_P + steer_I + steer_D) % 1.0;
+	double steer_angle = (steer_P + steer_I + steer_D);
 	
-	return steer_angle;
+	return fmod(steer_angle,1.0);
 }
 
