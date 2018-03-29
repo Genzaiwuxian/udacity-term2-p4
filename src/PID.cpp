@@ -41,7 +41,7 @@ double PID::TotalError() {
 	double steer_I = -PID::Ki*PID::i_error;
 	double steer_D = -PID::Kd*PID::d_error;
 	
-	double steer_angle = (steer_P + steer_I + steer_D) % 1;
+	double steer_angle = (steer_P + steer_I + steer_D) % 1.0;
 	
 	return steer_angle;
 }
