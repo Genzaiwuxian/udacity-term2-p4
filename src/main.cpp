@@ -34,8 +34,8 @@ int main()
 
   PID pid;
   // TODO: Initialize the pid variable.
-  const double init_Kp = 0.1;
-  const double init_Ki = 0.001;
+  const double init_Kp = 0.08;
+  const double init_Ki = 0.0001;
   const double init_Kd = 0.2;
   pid.Init(init_Kp, init_Ki, init_Kd);
 
