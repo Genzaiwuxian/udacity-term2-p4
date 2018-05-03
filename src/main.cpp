@@ -69,7 +69,7 @@ int main()
 		  if (steer_value < -1)
 			  steer_value = -1;
 
-		  pid.InitThrottle(0.1, 25);
+		  pid.InitThrottle(0.1, 20);
 		  double throttle=pid.UpdateThrottle(speed);
 		  if (throttle > 1)
 			  throttle = 1;
