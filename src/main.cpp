@@ -64,9 +64,9 @@ int main()
 		  
 		  pid.UpdateError(cte);
 		  steer_value = pid.TotalError();
-		  if (steer_value > 0.6)
+		  if (steer_value > 0.25)
 			  steer_value = 1;
-		  if (steer_value < -0.6)
+		  if (steer_value < -0.25)
 			  steer_value = -1;
 
 		  pid.InitThrottle(0.1, 20);
