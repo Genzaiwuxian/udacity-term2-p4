@@ -34,9 +34,9 @@ int main()
 
   PID pid;
   // TODO: Initialize the pid variable.
-  const double init_Kp = 0.15;
+  const double init_Kp = 0.09;
   const double init_Ki = 0.0001;
-  const double init_Kd = 0.6;
+  const double init_Kd = 0.1;
   pid.Init(init_Kp, init_Ki, init_Kd);
 
   h.onMessage([&pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
