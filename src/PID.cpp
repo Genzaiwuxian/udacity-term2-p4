@@ -26,6 +26,12 @@ void PID::Init(double Kp, double Ki, double Kd) {
 	PID::average_cte = 0.0;
 }
 
+void PID::InitThrottle(double Kp_throttle, double target_speed)
+{
+	PID::Kp_throttle = Kp_throttle;
+	PID::target_speed = target_speed;
+}
+
 void PID::UpdateError(double cte) {
 	PID::total_cte += cte * cte;
 	PID::loops_num++;
@@ -47,3 +53,7 @@ double PID::TotalError() {
 	return fmod(steer_angle,1.0);
 }
 
+double PID::UpdateThrottle(double speed)
+{
+	return Kp_throttle * (target_speed - speed);
+}
