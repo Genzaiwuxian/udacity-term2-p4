@@ -34,7 +34,7 @@ int main()
 
   PID pid;
   // TODO: Initialize the pid variable.
-  const double init_Kp = 0.05;
+  const double init_Kp = 0.08;
   const double init_Ki = 0.0000;
   const double init_Kd = 0.00;
   pid.Init(init_Kp, init_Ki, init_Kd);
@@ -69,7 +69,7 @@ int main()
 		  if (steer_value < -1)
 			  steer_value = -1;
 
-		  pid.InitThrottle(0.1, 30);
+		  pid.InitThrottle(0.1, 25);
 		  double throttle=pid.UpdateThrottle(speed);
 		  if (throttle > 1)
 			  throttle = 1;
